@@ -1,0 +1,27 @@
+
+@import 'mixins/_all';
+@import './../colors';
+
+.color-white { color: #fff; }
+
+.bg-color-black { background-color: #000; }
+
+@include sm {
+  .color-sm-white { color: #fff; }
+  .bg-color-sm-black { background-color: #000; }
+}
+
+@include md {
+  .color-md-white { color: #fff; }
+  .bg-color-md-black { background-color: #000; }
+}
+
+@include lg {
+  .color-lg-white { color: #fff; }
+  .bg-color-lg-black { background-color: #000; }
+}
+
+@include xl {
+  .color-xl-white { color: #fff; }
+  .bg-color-xl-black { background-color: #000; }
+}

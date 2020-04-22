@@ -1,0 +1,19 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  text-decoration: none;
+  list-style-type: none;
+  scroll-behavior: smooth;
+}
+  
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: #000;
+}
