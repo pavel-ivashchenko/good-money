@@ -1,4 +1,7 @@
+
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
+
+import { MockCards } from './models';
 
 @Component({
   selector: 'app-rates-home',
@@ -8,9 +11,11 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core';
 })
 export class RatesHomeComponent implements OnInit {
 
+  public isGrid = false;
+  public cards = MockCards;
+
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void { }
 
 }

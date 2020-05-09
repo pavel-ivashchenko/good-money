@@ -1,6 +1,9 @@
 
 @import 'mixins/_all';
 
+.font-weight-bold { font-weight: bold; }
+.font-weight-300 { font-weight: 300; }
+
 .font-10 { font-size: 10px; }
 .font-12 { font-size: 12px; }
 .font-14 { font-size: 14px; }
@@ -18,6 +21,9 @@
 .font-60 { font-size: 60px; }
 
 @include sm {
+  .font-weight-sm-bold { font-weight: bold; }
+  .font-weight-sm-300 { font-weight: 300; }
+
   .font-sm-10 { font-size: 10px; }
   .font-sm-12 { font-size: 12px; }
   .font-sm-14 { font-size: 14px; }
@@ -33,6 +39,9 @@
 }
 
 @include md {
+  .font-weight-md-bold { font-weight: bold; }
+  .font-weight-md-300 { font-weight: 300; }
+
   .font-md-10 { font-size: 10px; }
   .font-md-12 { font-size: 12px; }
   .font-md-14 { font-size: 14px; }
@@ -48,6 +57,9 @@
 }
 
 @include lg {
+  .font-weight-lg-bold { font-weight: bold; }
+  .font-weight-lg-300 { font-weight: 300; }
+
   .font-lg-10 { font-size: 10px; }
   .font-lg-12 { font-size: 12px; }
   .font-lg-14 { font-size: 14px; }
@@ -63,6 +75,9 @@
 }
 
 @include xl {
+  .font-weight-xl-bold { font-weight: bold; }
+  .font-weight-xl-300 { font-weight: 300; }
+
   .font-xl-10 { font-size: 10px; }
   .font-xl-12 { font-size: 12px; }
   .font-xl-14 { font-size: 14px; }

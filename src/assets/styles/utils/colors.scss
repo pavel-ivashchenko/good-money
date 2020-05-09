@@ -1,27 +1,26 @@
 
 @import 'mixins/_all';
-@import './../colors';
+@import '_colors';
 
 .color-white { color: #fff; }
-
-.bg-color-black { background-color: #000; }
+.color-grey-3 { color: $grey-3; }
 
 @include sm {
   .color-sm-white { color: #fff; }
-  .bg-color-sm-black { background-color: #000; }
+  .color-sm-grey-3 { color: $grey-3; }
 }
 
 @include md {
   .color-md-white { color: #fff; }
-  .bg-color-md-black { background-color: #000; }
+  .color-md-grey-3 { color: $grey-3; }
 }
 
 @include lg {
   .color-lg-white { color: #fff; }
-  .bg-color-lg-black { background-color: #000; }
+  .color-lg-grey-3 { color: $grey-3; }
 }
 
 @include xl {
   .color-xl-white { color: #fff; }
-  .bg-color-xl-black { background-color: #000; }
+  .color-xl-grey-3 { color: $grey-3; }
 }

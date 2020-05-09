@@ -3,18 +3,21 @@ import { NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StoreModule } from '@ngrx/store';
 
+import { SharedModule } from '@app/shared/shared.module';
+
 import { CoreRoutingModule } from './core-routing.module';
-import { SERVICES } from './services';
-import { CorePageComponent } from './pages';
 import { coreModuleStateToken, coreModuleState } from './store/reducers';
+import { SERVICES } from './services';
+import { CORE_PAGES } from './pages';
 
 @NgModule({
   declarations: [
-    CorePageComponent
+    ...CORE_PAGES
   ],
   imports: [
     CommonModule,
     CoreRoutingModule,
+    SharedModule,
     StoreModule.forRoot(coreModuleStateToken)
   ],
   providers: [
@@ -22,7 +25,8 @@ import { coreModuleStateToken, coreModuleState } from './store/reducers';
     ...SERVICES
   ],
   exports: [
-    CoreRoutingModule
+    CoreRoutingModule,
+    SharedModule
   ]
 })
 export class CoreModule {

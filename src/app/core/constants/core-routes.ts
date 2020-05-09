@@ -1,11 +1,11 @@
 
 import { Routes } from '@angular/router';
 
-import { CorePageComponent } from '../pages/core-page/core-page.component';
-import { NotFoundPageComponent } from '../pages/not-found-page/not-found-page.component';
+import { CorePageComponent, NotFoundPageComponent, MainPageComponent } from '../pages';
 
 export enum CORE_ROUTE_NAMES {
   RATES = 'rates',
+  NEWS = 'news',
   OTHER = '**',
   NOT_FOUND = '404'
 }
@@ -15,11 +15,11 @@ export const CORE_ROUTES: Routes = [{
   component: CorePageComponent,
   children: [{
     path: '',
-    redirectTo: CORE_ROUTE_NAMES.RATES,
-    pathMatch: 'full' },
-  {
+    component: MainPageComponent,
+    pathMatch: 'full'
+  }, {
     path: CORE_ROUTE_NAMES.RATES,
-    loadChildren: '@app/rates/rates.module#RatesModule'
+    loadChildren: () => import('@app/rates/rates.module').then(m => m.RatesModule)
   }, {
     path: CORE_ROUTE_NAMES.OTHER,
     redirectTo: CORE_ROUTE_NAMES.NOT_FOUND,

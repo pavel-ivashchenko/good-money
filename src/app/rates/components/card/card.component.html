@@ -1,0 +1,49 @@
+
+<section *ngIf="!!card" class="width-100">
+
+  <div *ngIf="!isGridView" class="card">
+    <ng-container *ngTemplateOutlet="cardHeader"></ng-container>
+    <div class="card__content bg-white d-flex flex-column align-items-center">
+      <ng-container *ngTemplateOutlet="cardTitle"></ng-container>
+      <ul class="card__options width-100 d-flex">
+        <li class="d-flex flex-column color-grey-3 line-height-36 font-14 font-weight-300 width-50">
+          <p>Сумма, грн</p>
+          <p>Ставка, в день</p>
+          <p>Срок, дней</p>
+        </li>
+        <li class="d-flex flex-column line-height-36 font-14 font-weight-bold line-height-36 width-50">
+          <p>до {{ card.amount_max }}</p>
+          <p>от {{ card.dayly_rate }}</p>
+          <p>от {{ card.term_min }} до {{ card.term_max }}</p>
+        </li>
+      </ul>
+      <ng-container *ngTemplateOutlet="cardCtrls"></ng-container>
+    </div>
+  </div>
+
+  <div *ngIf="isGridView" class="gridCard">
+    <ng-container *ngTemplateOutlet="cardHeader"></ng-container>
+  </div>
+
+</section>
+
+<ng-template #cardHeader>
+  <header class="card__type bg-blue-1 color-white pos-relative font-10">
+    <p class="line-height-24">{{ card.type }}</p>
+    <i class="info-icon pos-absolute right-0 top-0"></i>
+  </header>
+</ng-template>
+
+<ng-template #cardTitle>
+  <figure class="width-100">
+    <img src="/assets/img/png/{{ card.logo }}">
+    <figcaption class="card__title">{{ card.title }}</figcaption>
+  </figure>
+</ng-template>
+
+<ng-template #cardCtrls>
+  <div class="p-x-10 width-100 d-flex flex-column align-items-center">
+    <button class="bg-green-1 color-white width-100" mat-button>Оформить займ</button>
+    <a class="card__details font-14 line-height-18" [routerLink]="['/details/' + card.id]">Подробнее</a>
+  </div>
+</ng-template>

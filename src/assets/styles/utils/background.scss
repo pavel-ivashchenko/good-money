@@ -1,27 +1,46 @@
 
 @import 'mixins/_all';
-@import 'colors';
+@import '_colors';
 
 .bg-center-norepeat { background: center no-repeat; }
 
 .bg-white { background-color: #fff; }
+.bg-color-black { background-color: #000; }
+.bg-blue-1 { background-color: $blue-1; }
+.bg-green-1 { background-color: $green-1; }
 
 @include sm {
-  .bg-sm-white { background-color: #fff; }
   .bg-sm-center-norepeat { background: center no-repeat; }
+
+  .bg-sm-white { background-color: #fff; }
+  .bg-color-sm-black { background-color: #000; }
+  .bg-sm-blue-1 { background-color: $blue-1; }
+  .bg-green-1 { background-color: $green-1; }
 }
 
 @include md {
-  .bg-md-white { background-color: #fff; }
   .bg-md-center-norepeat { background: center no-repeat; }
+
+  .bg-md-white { background-color: #fff; }
+  .bg-color-md-black { background-color: #000; }
+  .bg-md-blue-1 { background-color: $blue-1; }
+  .bg-green-1 { background-color: $green-1; }
 }
 
 @include lg {
-  .bg-lg-white { background-color: #fff; }
   .bg-lg-center-norepeat { background: center no-repeat; }
+
+  .bg-lg-white { background-color: #fff; }
+  .bg-color-lg-black { background-color: #000; }
+  .bg-lg-blue-1 { background-color: $blue-1; }
+  .bg-green-1 { background-color: $green-1; }
 }
 
 @include xl {
-  .bg-xl-white { background-color: #fff; }
   .bg-xl-center-norepeat { background: center no-repeat; }
+  
+  .bg-xl-white { background-color: #fff; }
+  .bg-color-xl-black { background-color: #000; }
+  .bg-xl-blue-1 { background-color: $blue-1; }
+  .bg-green-1 { background-color: $green-1; }
 }
