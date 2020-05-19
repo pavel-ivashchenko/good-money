@@ -1,15 +1,15 @@
 
 import { Routes } from '@angular/router';
 
-import { RatesHomeComponent, RatesComponent } from '../components';
+import { RatesComponent } from '../components';
 
 export const RATES_ROUTES: Routes = [{
   path: '',
-  component: RatesComponent,
   children: [
     {
       path: '',
-      component: RatesHomeComponent
+      pathMatch: 'full',
+      component: RatesComponent,
     }
   ]
 }];
