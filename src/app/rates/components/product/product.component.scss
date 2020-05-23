@@ -1,40 +1,16 @@
 
 @import 'mixins/_all';
 
-:host {
-    width: 100%;
-}
-
 .info-icon {
-    width: 10px; height: 10px;
-    right: 12px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
+  width: 10px; height: 10px;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
 }
 
 .product-type {
-    max-width: 150px;
-    padding: 0 12px;
-    border-radius: 4px 4px 0px 0px;
+  max-width: 150px;
+  padding: 0 12px;
+  border-radius: 4px 4px 0px 0px;
 }
-
-/*
-.card {
-  @include e('content') {
-    min-height: 368px;
-    padding: 36px 24px 22px;
-    flex-direction: column;
-    align-items: center;
-    box-shadow: 0px 8px 10px rgba(229, 229, 229, 0.5);
-    border-radius: 0px 4px 4px 4px;
-    @include m('is-grid') {
-      min-height: 140px;
-      flex-direction: row;
-      & > * { width: 20%; }
-    }
-  }
-  @include e('title') { margin-top: 36px; }
-  @include e('details') { margin-top: 16px; }
-}
-*/

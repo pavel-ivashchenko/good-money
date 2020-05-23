@@ -1,5 +1,5 @@
 
-import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, OnInit, ChangeDetectionStrategy, Input, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-product',
@@ -10,9 +10,19 @@ import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core
 export class ProductComponent implements OnInit {
 
   @Input() product: any;
-  @Input() isLargeMode = false;
+  @Input() set isLargeMode(value: boolean) {
+    if (!this.elementRef) { return; }
+    this._isLargeMode = value;
+    this.elementRef.nativeElement.className = this._isLargeMode ? 'col-12' : 'col-3';
+  };
 
-  constructor() { }
+  private _isLargeMode = false;
+
+  public get titleClass(): string { return this._isLargeMode ? 'col' : 'col-12'; }
+  public get detailsClass(): string { return this._isLargeMode ? 'col flex-row' : 'col-12 flex-column'; }
+  public get ctrlsClass(): string { return this._isLargeMode ? 'col' : 'col-12'; }
+
+  constructor(private elementRef: ElementRef) { }
 
   ngOnInit(): void { }
 

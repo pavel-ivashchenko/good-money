@@ -1,42 +1,28 @@
 
-<div #productElement class="width-100">
+<header class="product-type bg-blue-1 color-white pos-relative font-10">
+    <p class="line-height-24">{{ product.type }}</p>
+    <i class="info-icon pos-absolute right-0 top-0"></i>
+</header>
 
-    <div class="product-type bg-blue-1 color-white pos-relative font-10">
-        <p class="line-height-24">{{ product.type }}</p>
-        <i class="info-icon pos-absolute right-0 top-0"></i>
+<div class="row no-gutters">
+    <figure [ngClass]="titleClass">
+        <img src="/assets/img/png/{{ product.logo }}">
+        <figcaption>{{ product.title }}</figcaption>
+    </figure>
+    <div [ngClass]="detailsClass">
+        <p>Сумма, грн</p>
+        <p>до {{ product.amount_max }}</p>
     </div>
-
-    <div
-        [ngClass]="{
-            'test1': isLargeMode,
-            'test2': !isLargeMode }"
-        class="product-content bg-white row no-gutters">
-
-        <figure [ngClass]="{ 'col': isLargeMode, 'col-12': !isLargeMode }">
-            <img src="/assets/img/png/{{ product.logo }}">
-            <figcaption class="product-title">{{ product.title }}</figcaption>
-        </figure>
-
-        <div [ngClass]="{ 'col': isLargeMode, 'col-12': !isLargeMode }">
-            <p>Сумма, грн</p>
-            <p>до {{ product.amount_max }}</p>
-        </div>
-
-        <div [ngClass]="{ 'col': isLargeMode, 'col-12': !isLargeMode }">
-            <p>Ставка, в день</p>
-            <p>от {{ product.dayly_rate }}</p>
-        </div>
-
-        <div [ngClass]="{ 'col': isLargeMode, 'col-12': !isLargeMode }">
-            <p>Срок, дней</p>
-            <p>от {{ product.term_min }} до {{ product.term_max }}</p>
-        </div>
-
-        <div [ngClass]="{ 'col': isLargeMode, 'col-12': !isLargeMode }">
-            <button class="bg-green-1 color-white width-100" mat-button>Оформить займ</button>
-            <a class="font-14 line-height-18" [routerLink]="['/details/' + product.id]">Подробнее</a>
-        </div>
-
+    <div [ngClass]="detailsClass">
+        <p>Ставка, в день</p>
+        <p>от {{ product.dayly_rate }}</p>
     </div>
-
+    <div [ngClass]="detailsClass">
+        <p>Срок, дней</p>
+        <p>от {{ product.term_min }} до {{ product.term_max }}</p>
+    </div>
+    <div [ngClass]="ctrlsClass">
+        <button class="bg-green-1 color-white width-100" mat-button>Оформить займ</button>
+        <a class="font-14 line-height-18" [routerLink]="['/details/' + product.id]">Подробнее</a>
+    </div>
 </div>
